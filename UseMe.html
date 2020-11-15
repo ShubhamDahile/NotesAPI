@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <br />
+    <h2 style="text-align:center">Access API Methods</h2>
+    <h4 style="text-align:right"><a href="/swagger/ui/index">Help Me More</a></h4>
+    <hr />
+    <table border="1">
+        <tr>
+            <td>HttpVerb</td>
+            <td>url</td>
+            <td>Headers</td>
+            <td>Body</td>
+            <td>Response</td>
+        </tr>
+        <tr>
+            <td colspan="5"><h3 style="text-align:center">Accounts Controller</h3></td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>/api/accounts/register</td>
+            <td></td>
+            <td>
+                {
+                "UserName": "user1",
+                "Email": "user1@gmail.com",
+                "Password": "123456"
+                }
+            </td>
+            <td>
+                {
+                "Data": {
+                "Id": 1,
+                "UserName": "user1",
+                "Email": "user1@gmail.com",
+                "CreatedDate": "2020-11-15T07:52:22.7059091Z"
+                },
+                "Success": true,
+                "Message": null
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>/api/accounts/login</td>
+            <td></td>
+            <td>
+                {
+                "UserName": "user1",
+                "Email": "user1@gmail.com",
+                "Password": "123456"
+                }
+            </td>
+            <td>
+                {
+                "Data":
+                "Web Token Here",
+                "Success": true,
+                "Message": null
+                }
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5"><h3 style="text-align:center">Notes Controller</h3></td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/api/notes</td>
+            <td>
+                <p>Authentication</p>
+                <p>Bearer WriteWebTokenHere</p>
+            </td>
+            <td></td>
+            <td>
+                { "Data": { List of Notes }, "Success": true, "Message": null }
+            </td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/api/notes/{id}</td>
+            <td>
+                <p>Authentication</p>
+                <p>Bearer WriteWebTokenHere</p>
+            </td>
+            <td></td>
+            <td>
+                { "Data": { Note by id }, "Success": true, "Message": null }
+            </td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>/api/notes</td>
+            <td>
+                <p>Authentication</p>
+                <p>Bearer WriteWebTokenHere</p>
+            </td>
+            <td>
+                {
+                "Title": "Note1",
+                "keyword": "Note1 keyword",
+                "Discription": "Note1 Discription"
+                }
+            </td>
+            <td>
+                { "Data": { Note1 Details }, "Success": true, "Message": null }
+            </td>
+        </tr>
+        <tr>
+            <td>PUT</td>
+            <td>/api/notes</td>
+            <td>
+                <p>Authentication</p>
+                <p>Bearer WriteWebTokenHere</p>
+            </td>
+            <td>
+                {
+                "Id": 1,
+                "Title": "Note1 updated",
+                "keyword": "Note1 keyword",
+                "Discription": "Note1 Discription updated",
+                "CreatedDate": "2020-11-15T07:44:11.463Z",
+                "UpdatedDate": "2020-11-15T07:44:11.463Z",
+                "UserId": 1
+                }
+            </td>
+            <td>
+                { "Data": { Note1 updated Details }, "Success": true, "Message": null }
+            </td>
+        </tr>
+        <tr>
+            <td>DELETE</td>
+            <td>/api/notes/{id}</td>
+            <td>
+                <p>Authentication</p>
+                <p>Bearer WriteWebTokenHere</p>
+            </td>
+            <td></td>
+            <td>
+                { "Data": true, "Success": true, "Message": null }
+            </td>
+        </tr>
+    </table>
+    <br />
+
+    <hr />
+</body>
+</html>
